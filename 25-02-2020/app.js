@@ -17,6 +17,7 @@ jane.lastName = 'doe';
 
 console.log(jhon.greet());
 */
+/*
 var EventEmitter = require('events');
 var until = require('util');
 
@@ -34,7 +35,22 @@ Greetr.prototype.greet = function (data) {
 let greeter1 = new Greetr();
 
 greeter1.on('greet', function (data) {
-    console.log('some greeted: ' + data);
+    console.log('some greeted: ' + data + '' + param);
 })
 
 greeter1.greet('red');
+*/
+
+let obj = {
+    name: 'jhon doe',
+    greet: function (param) {
+        console.log('hello ' + this.name + '' + param);
+    }
+}
+var param = 'h';
+obj.greet(param);
+obj.greet.call({ name: 'jane Doe' }, param);
+obj.greet.apply({ name: 'jane Doe' }, [param]);
+
+
+
